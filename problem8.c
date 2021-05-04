@@ -36,7 +36,7 @@ int main()
     }
     
 
-    printf("Best found: %ld\n", best);
+    printf("Best product found: %ld\n", best);
 
     return 0;
 }
