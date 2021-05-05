@@ -20,13 +20,8 @@ int* iterate(int **number)
             (*number)[i] = (*number)[i]*2 + carryOver;
             carryOver = 0;
         } else {
-            if ( (*number)[i] == 5 ) {
-                (*number)[i] = ((*number)[i]*2 + carryOver) % 10;
-                carryOver = 1;
-            } else {
-                (*number)[i] = ((*number)[i]*2) % 10;
-                carryOver = 1;
-            }
+            (*number)[i] = ((*number)[i]*2 + carryOver) % 10;
+            carryOver = 1;
         }
         i++;
     }
@@ -36,6 +31,7 @@ int* iterate(int **number)
 
 int main()
 {
+    /* 2**1000 has roughly 300 digits */
     int* number = calloc(350, sizeof(int));
     number[0] = 1;
     int i=0;
@@ -46,7 +42,7 @@ int main()
         i++;
     }
 
-    for ( int j=0; j<1000; j++ ) {
+    for ( int j=0; j<350; j++ ) {
         sum += number[j];
     }
 
