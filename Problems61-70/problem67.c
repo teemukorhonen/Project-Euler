@@ -5,20 +5,18 @@
 
 
 /*
-    This problem was solved by using dynamic programming.
-    The pyramid is "collapsed" to top obtaining the
-    most optimal results on the way.
+    Re-using code from problem 18.
 */
 
 
 int main()
 {
 
-    int **arr = calloc ( 15, sizeof( int * ) );
-    for (int i=0; i<15; i++) {
+    int **arr = calloc ( 100, sizeof( int * ) );
+    for (int i=0; i<100; i++) {
         arr[i] = calloc( i+1, sizeof(int) );
     }
-    FILE *f = fopen( "problem18.txt", "r" );
+    FILE *f = fopen( "problem67.txt", "r" );
     int i=0;
     while ( !feof(f) )
     {
@@ -28,7 +26,7 @@ int main()
         i++;
     }
 
-    i=13;
+    i=98;
     while ( i > -1 )
     {
         for (int j=0; j<=i; j++) {
